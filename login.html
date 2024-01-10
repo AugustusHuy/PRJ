@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Exercise</title>
+</head>
+<body>
+    <form name="input" onsubmit="handleLogin(event)"> 
+        <table>
+            <tr>
+                <td>User name:</td><td><input type="text" name="user" required/></td>
+            </tr>
+            <tr>
+                <td>Password:</td><td><input type="password" name="pass" required/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Login"/></td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            var username = document.forms["input"]["user"].value;
+            var password = document.forms["input"]["pass"].value;
+
+            if (username === "abc" && password === "12345") {
+                document.getElementById("result").innerHTML = "Login successful!";
+            } else {
+                document.getElementById("result").innerHTML = "Login failed. Wrong username or password";
+            }
+        }
+    </script>
+</body>
+</html>
